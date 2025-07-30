@@ -1,8 +1,10 @@
-from pydantic import BaseModel
-from typing import Union
+import strawberry
+
+from typing import List
 
 
-class Item(BaseModel):
+@strawberry.type
+class ItemType:
     id: str
     is_active: bool
     price: float
@@ -10,4 +12,4 @@ class Item(BaseModel):
     picture: str
     title: str
     description: str
-    tags: list[str]
+    tags: List[str]
